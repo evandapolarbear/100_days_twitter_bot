@@ -5,8 +5,8 @@ require "twitter"
 client = Twitter::REST::Client.new do |config|
   config.consumer_key = ENV["CONSUMER_KEY_100"]
   config.consumer_secret = ENV["CONSUMER_SECRET_100"]
-  config.access_token = ENV["ACCESS_TOKEN_1OO"]
-  config.access_token_secret = ENV["ACCESS_TOKEN_SECRET_100"] 
+  config.access_token = ENV["ACCESS_TOKEN_100"]
+  config.access_token_secret = ENV["ACCESS_TOKEN_SECRET_100"]
 end
 
 search_options = {
@@ -29,4 +29,4 @@ def main(term, opts, num, api)
   puts "#{liked_names.count} tweets favorited of #{num} searched"
 end
 
-# main("100daysofcode", search_options, 50, client)
+main("100daysofcode", search_options, 50, client)
