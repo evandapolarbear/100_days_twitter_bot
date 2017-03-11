@@ -14,11 +14,9 @@ search_options = {
 }
 
 def retweet(term, opts, api)
-  # puts api.methods
   api.search(term, opts).take(1).each do |tweet|
-    # puts tweet.methods - Object.methods
     api.retweet(tweet)
-
+    puts tweet.user.screen_name
   end
 end
 
@@ -39,5 +37,5 @@ def main(term, opts, num, api)
   puts "#{liked_names.count} tweets favorited of #{num} searched"
 end
 
-# main("100daysofcode", search_options, 50, client)
-# retweet("100daysofcode", search_options, client)
+# main("100daysofcode", search_options, 25, client)
+retweet("100daysofcode", search_options, client)

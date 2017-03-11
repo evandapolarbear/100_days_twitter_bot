@@ -32,11 +32,19 @@ class String
     end.sub(/^me\b/i, 'i')
   end
 
+
+  def self.best_sentence(sentences, words)
+    ordered = sentences.sort_by do |s|
+      s.words.length - (s.downcase.words - words).length
+    end
+    ordered.last
+  end
 end
 
 hotties = %w{ruby javascript html css}
-test_string = "you got this shit"
+test_string = "ruby ruby. hello. ruby javascript html css. html"
 
 
+# p String.best_sentence(test_string.sentences, hotties)
 # p String.switch_pronouns(test_string)
 # puts String.hot_words(test_string, hotties)
