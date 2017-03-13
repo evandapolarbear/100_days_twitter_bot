@@ -40,12 +40,18 @@ class Bot
       next unless pattern.is_a?(String)
 
       if sentence.match('\b' + pattern.gsub(/\*/, '') + '\b')
-        responses << @data[:responses][pattern]
+        if pattern.include?("*")
+          responses << @data[:responses][pattern].collect do |phrase|
+           matching_section = sentence.sub(/^.*#{pattern}\s+/, '')
+           phrase.sub('*', WordPlay.switch_pronouns(matching_section))
+          end
+        else
+          responses << @data[:responses][pattern]
+        end
       end
     end
 
     responses << @data[:responses][:default] if responses.empty?
-
     responses.flatten
   end
 
@@ -81,7 +87,6 @@ test_options = {
 
 lars = Bot.new(test_options)
 
-puts lars.response_to("bopadjf. Thank you. Thank you I like katja. Thank you
-I like Katja I Like Ben")
+puts lars.response_to("")
 # puts lars.greeting
 # puts lars.farewell
