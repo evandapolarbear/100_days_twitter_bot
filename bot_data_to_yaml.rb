@@ -17,7 +17,12 @@ bot_data = {
                  "Sorry, I dont understand.", "Wut?"],
 
     :greeting => ["Hola",
-                  "Heya [name], hows it going?"],
+                  "Hi I'm [name], hows it going?"],
+
+    :farewell => ["See Ya!",
+                  "Adios!",
+                  "Farewell!",
+                  "Good bye!"],
 
     :retweets => ["You go Glen CoCo",
                   "Don't STOP, Believing",
@@ -27,8 +32,8 @@ bot_data = {
                    "Why do you like * so much?",
                    "* is so cool"],
 
-    "thank you" => ["You're welcome",
-                    "De Nada",
+    "thank you" => ["De Nada",
+                    "You're welcome",
                     "All in a days work for superbot"],
   }
 }

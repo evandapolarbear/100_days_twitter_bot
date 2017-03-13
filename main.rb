@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require "twitter"
-require_relative "bot/bot_data_to_yaml"
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key = ENV["CONSUMER_KEY_100"]
@@ -41,5 +40,3 @@ end
 
 # main("100daysofcode", search_options, 50, client)
 # retweet("100daysofcode", search_options, client)
-
-p bot_data

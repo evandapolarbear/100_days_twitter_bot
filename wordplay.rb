@@ -6,7 +6,9 @@ class String
   def words
     scan(/\w[\w\'\-]*/)
   end
+end
 
+class WordPlay
   def self.hot_words(string, words)
     string.sentences.find_all do |s|
       s.downcase.words.any? do |w|
