@@ -87,6 +87,6 @@ test_options = {
 
 lars = Bot.new(test_options)
 
-puts lars.response_to("")
+# puts lars.response_to("why isnt this working now?")
 # puts lars.greeting
 # puts lars.farewell

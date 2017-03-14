@@ -3,7 +3,8 @@ require 'yaml'
 
 bot_data = {
   :presubs => [
-    ["dont"   , "don't"],
+    ["dont"   , "do not"],
+    ["don't"   , "do not"],
 
     ["youre"  , "you're"],
     ["love"   , "like"],
@@ -63,17 +64,27 @@ bot_data = {
 
     'do not know' => ["Why can't you decide?"],
 
+    'hello' => ["Its nice to meet you.",
+                "Hi! I would ask your name but my memory is bad",
+                "Hey! Talk to me!"],
+
     'yes' => ["Coolio!",
               "Great!"],
 
     'no' => ["Really?",
              "Okay.",
-             "Fair enough."]
+             "Fair enough."],
+
+    'what' => ["Why do you ask?",
+               "Why?",
+               "I don't know, do you?"],
+
+
+
 
     'you are *' => ["What makes you think I'm *",
-                    "Are you so sure I am *"],
-
-    'you are *' => ["Did you mean that a nice way",
+                    "Are you so sure I am *",
+                    "Did you mean that in a nice way",
                     "Are you sure I'm *?",
                     "I think I'd enjoy being *."],
 
@@ -86,11 +97,28 @@ bot_data = {
 
 
 
-    'family' => ["Tell me about your family"],
+
+    'why can\'t i *' => ["Do you want to *?"],
+
+    'why can\,t you *' => ["Do you want me to *?"],
+
+    'why does *' => ["I don't know why *.",
+                     "Do you already know the answer."],
+
+
+
 
     'i like *' => ["I like * too!",
                    "Why do you like * so much?",
                    "* is so cool"],
+
+    'hate *' => ["Why don't you like *?",
+                 "Why the dislike of *?"],
+
+
+
+
+    'family' => ["Tell me about your family"],
 
     "thank you" => ["De Nada",
                     "You're welcome",

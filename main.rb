@@ -39,4 +39,4 @@ def main(term, opts, num, api)
 end
 
 # main("100daysofcode", search_options, 50, client)
-# retweet("100daysofcode", search_options, client)
+retweet("100daysofcode", search_options, client)
