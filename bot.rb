@@ -25,10 +25,18 @@ class Bot
   end
 
   def response_to(input)
+
+    #itterates through every presub and subs it
+    #so to make is simpler for bot to respond.
     prepped_input = preprocess(input)
+
+
     sentence = best_sentence(prepped_input)
+
+
     responses = possible_responses(sentence)
     responses[rand(responses.length)]
+    # "test"
   end
 
   def random_response(key)
@@ -42,6 +50,7 @@ class Bot
     responses = []
 
     @data[:responses].keys.each do |pattern|
+      #?
       next unless pattern.is_a?(String)
 
       if sentence.match('\b' + pattern.gsub(/\*/, '') + '\b')
@@ -61,7 +70,8 @@ class Bot
   end
 
   def preprocess(input)
-    perform_substitutions(input.downcase)
+    lowered = input.downcase
+    perform_substitutions(lowered)
   end
 
   def perform_substitutions(input)
@@ -76,17 +86,4 @@ class Bot
 
     WordPlay.best_sentence(input.sentences, hot_words)
   end
-
 end
-
-
-
-test_options = {
-  :data => 'bot_talk_base'
-}
-
-lars = Bot.new(test_options)
-
-# puts lars.response_to("why isnt this working now?")
-# puts lars.greeting
-# puts lars.farewell

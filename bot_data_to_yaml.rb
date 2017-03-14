@@ -3,21 +3,24 @@ require 'yaml'
 
 bot_data = {
   :presubs => [
+    ["im"  , "i am"],
+    ["i'm"  , "i am"],
+
     ["dont"   , "do not"],
     ["don't"   , "do not"],
 
     ["youre"  , "you're"],
+
     ["love"   , "like"],
+    ["enjoy"   , "like"],
 
     ["hi"     , "hello"],
     ["hola"   , "hello"],
     ["hey"    , "hello"],
 
+
     ["thanks" , "thank you"],
     ["gracias" , "thank you"],
-
-    ["love" , "like"],
-    ["enjoy" , "like"],
 
     ["dislike", "hate"],
     ["despise", "hate"],
@@ -38,7 +41,8 @@ bot_data = {
     :default => ["hrrrmmmm?",
                  "Sorry, I dont understand.",
                  "Wut?",
-                 "Tell me something else"],
+                 "Tell me something else",
+                 "I didnt understand.  What are you working in today?"],
 
     :greeting => ["Hola",
                   "Hi I'm [name], hows it going?",
@@ -50,9 +54,11 @@ bot_data = {
                   "Good bye!",
                   "Au revoir!"],
 
-    :retweets => ["You go Glen CoCo",
-                  "Don't STOP, Believing",
-                  "WOOP WOOP"
+    :retweets => ["You go Glen CoCo!",
+                  "Don't STOP, Believingggg!",
+                  "WOOP WOOP!",
+                  "You're the Rocky Balboa of code.",
+                  "If I had feelings I would be feel in awe of you."
                   ],
 
     'sorry' => ["No need to appoligize!",
@@ -65,9 +71,8 @@ bot_data = {
 
     'do not know' => ["Why can't you decide?"],
 
-    'hello' => ["Its nice to meet you.",
-                "Hi! I would ask your name but my memory is bad",
-                "Hey! Talk to me!"],
+    'hello' => ["Its nice to meet you. Whats up?",
+                "Hi... erm you. What's happening?"],
 
     'yes' => ["Coolio!",
               "Great!"],
@@ -80,18 +85,16 @@ bot_data = {
                "Why?",
                "I don't know, do you?"],
 
-
-
-
     'you are *' => ["What makes you think I'm *",
                     "Are you so sure I am *",
                     "Did you mean that in a nice way",
                     "Are you sure I'm *?",
                     "I think I'd enjoy being *."],
 
-    'i am *' => ["Do you like being *?",
-                 "How did you become *?",
-                 "Is it normal to be *?"] ,
+    'i am *' => ["Do you like *?",
+                 "Why are you *?",
+                 "Is it normal to *?",
+                 "How long have you *"] ,
 
     'i do not *' => ["Why don't you *",
                      "Cool me either"],
