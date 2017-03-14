@@ -31,6 +31,11 @@ class Bot
     responses[rand(responses.length)]
   end
 
+  def random_response(key)
+    rand_idx = rand(@data[:responses][key].length)
+    @data[:responses][key][rand_idx].gsub(/\[name\]/, @name)
+  end
+
   private
 
   def possible_responses(sentence)
@@ -53,11 +58,6 @@ class Bot
 
     responses << @data[:responses][:default] if responses.empty?
     responses.flatten
-  end
-
-  def random_response(key)
-    rand_idx = rand(@data[:responses][key].length)
-    @data[:responses][key][rand_idx].gsub(/\[name\]/, @name)
   end
 
   def preprocess(input)

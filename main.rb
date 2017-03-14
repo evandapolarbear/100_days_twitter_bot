@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "twitter"
+require_relative "./bot.rb"
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key = ENV["CONSUMER_KEY_100"]
@@ -13,13 +14,13 @@ search_options = {
   result_type: "recent"
 }
 
-def retweet(term, opts, api)
-  api.search(term, opts).take(1).each do |tweet|
-    api.retweet(tweet)
-    puts "retweeted #{tweet.user.screen_name}"
-
-  end
-end
+# def retweet(term, opts, api)
+#   api.search(term, opts).take(1).each do |tweet|
+#     api.retweet(tweet)
+#     puts "retweeted #{tweet.user.screen_name}"
+#
+#   end
+# end
 
 
 def main(term, opts, num, api)
@@ -38,5 +39,26 @@ def main(term, opts, num, api)
   puts "#{liked_names.count} tweets favorited of #{num} searched"
 end
 
+
+def better_retweet(term, opts, api, num)
+  bot_opts = {
+    :name => "Pope Lenny, first of his Name",
+    :data => "bot_talk_base"
+  }
+
+  bot = Bot.new(bot_opts)
+
+  api.search(term, opts,).take(num).each do |tweet|
+    message = bot.random_response(:retweets)
+    name = tweet.user.screen_name
+    url = tweet.url
+
+    api.update("#{message} @#{name} RT: #{url}")
+
+    puts "sent '#{message}' to #{name}"
+  end
+end
+
+
 # main("100daysofcode", search_options, 50, client)
-retweet("100daysofcode", search_options, client)
+better_retweet("100daysofcode", search_options, client, 3)

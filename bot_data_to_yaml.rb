@@ -52,7 +52,8 @@ bot_data = {
 
     :retweets => ["You go Glen CoCo",
                   "Don't STOP, Believing",
-                  "Preach!"],
+                  "WOOP WOOP"
+                  ],
 
     'sorry' => ["No need to appoligize!",
                 "It's Okay"],
