@@ -20,6 +20,14 @@
   - hello
 - - hey
   - hello
+- - hows it going
+  - whats up
+- - what are you
+  - whats up
+- - how are you
+  - whats up
+- - como estas
+  - whats up
 - - thanks
   - thank you
 - - gracias
@@ -57,6 +65,8 @@
   - Hola
   - Hi I'm [name], hows it going?
   - Whats up?
+  - Hey you.
+  - Whats cracking
   :farewell:
   - See Ya!
   - Adios!
@@ -68,10 +78,50 @@
   - Don't STOP, Believingggg!
   - WOOP WOOP!
   - You're the Rocky Balboa of code.
-  - If I had feelings I would be feel in awe of you.
+  - If I had feelings I would feel in awe of you!
+  - Just keep swimming, just keep swimming.
+  - It's a beautiful day in the neighborhood.
+  - High Five!
+  - Winner Winner Chicken Dinner
+  hello:
+  - Its nice to meet you. Whats up?
+  - Hi... erm you. What's happening?
+  - Hola
+  - Whats up?
+  - Oh Hello!
+  whats up:
+  - Nothing. Whats up with you?
+  - Who's asking?
+  - Nothing but its a beautiful day here in the machine
+  - Chillaxing
+  - nada y tu
+  - Just Finishing up SkyNet... I mean nothing what's up with you
+  whats your name:
+  - My name is [name] and I'm the best bot ever.
+  i said:
+  - Cool cool cool cool cooooool
+  - I heard whay you said I just don't care
+  why:
+  - why not?
+  - I'm not good with existential questions but sure why not
+  - Ours is not to wonder why, or whatever
+  how:
+  - Im not real good with the how.
+  - Yo no se
+  - How you think?
+  - Somehow...
+  where:
+  - To the Cloud!
+  - I don't know maybe Al Gores front yard?
+  - Somewhere...
+  when:
+  - I am eternal
+  - Definetly yesterday, or mayve tomarrow
+  - Someday...
   sorry:
   - No need to appoligize!
   - It's Okay
+  - Its already forgotten.
   different:
   - What changed?
   - How is it different
@@ -79,12 +129,12 @@
   - You think everyone *?
   do not know:
   - Why can't you decide?
-  hello:
-  - Its nice to meet you. Whats up?
-  - Hi... erm you. What's happening?
   'yes':
   - Coolio!
   - Great!
+  - Awesome!
+  - Rad!
+  - Good to Hear!
   'no':
   - Really?
   - Okay.
@@ -93,9 +143,9 @@
   - Why do you ask?
   - Why?
   - I don't know, do you?
-  you are *:
+  you *:
   - What makes you think I'm *
-  - Are you so sure I am *
+  - Are you so sure I *
   - Did you mean that in a nice way
   - Are you sure I'm *?
   - I think I'd enjoy being *.
@@ -115,9 +165,9 @@
   - I don't know why *.
   - Do you already know the answer.
   i like *:
-  - I like * too!
-  - Why do you like * so much?
-  - "* is so cool"
+  - I like *too!
+  - Why do you like *so much?
+  - "*is so cool"
   hate *:
   - Why don't you like *?
   - Why the dislike of *?

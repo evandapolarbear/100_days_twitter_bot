@@ -71,7 +71,7 @@ class Bot
     #add curse removal before live
 
     lowered = input.downcase
-    lowered = WordPlay.remove_curses()
+    # lowered = WordPlay.remove_curses()
     perform_substitutions(lowered)
   end
 

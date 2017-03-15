@@ -49,10 +49,7 @@ def better_retweet(term, opts, api, num)
   bot = Bot.new(bot_opts)
 
   api.search(term, opts,).take(num).each do |tweet|
-    if tweet.retweet?
-      puts "stopped because tweet is retweet"
-      next
-    end
+    next if tweet.retweet?
 
     message = bot.random_response(:retweets)
     name = tweet.user.screen_name
@@ -65,5 +62,5 @@ def better_retweet(term, opts, api, num)
 end
 
 
-# main("100daysofcode", search_options, 50, client)
-better_retweet("100daysofcode", search_options, client, 5)
+main("#100daysofcode", search_options, 50, client)
+better_retweet("#100daysofcode", search_options, client, 7)
