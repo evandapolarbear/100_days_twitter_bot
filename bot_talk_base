@@ -12,6 +12,8 @@
   - you're
 - - love
   - like
+- - enjoy
+  - like
 - - hi
   - hello
 - - hola
@@ -22,10 +24,6 @@
   - thank you
 - - gracias
   - thank you
-- - love
-  - like
-- - enjoy
-  - like
 - - dislike
   - hate
 - - despise
@@ -54,6 +52,7 @@
   - Sorry, I dont understand.
   - Wut?
   - Tell me something else
+  - I didnt understand.  What are you working in today?
   :greeting:
   - Hola
   - Hi I'm [name], hows it going?
@@ -65,9 +64,11 @@
   - Good bye!
   - Au revoir!
   :retweets:
-  - You go Glen CoCo
-  - Don't STOP, Believing
-  - WOOP WOOP
+  - You go Glen CoCo!
+  - Don't STOP, Believingggg!
+  - WOOP WOOP!
+  - You're the Rocky Balboa of code.
+  - If I had feelings I would be feel in awe of you.
   sorry:
   - No need to appoligize!
   - It's Okay
@@ -79,9 +80,8 @@
   do not know:
   - Why can't you decide?
   hello:
-  - Its nice to meet you.
-  - Hi! I would ask your name but my memory is bad
-  - Hey! Talk to me!
+  - Its nice to meet you. Whats up?
+  - Hi... erm you. What's happening?
   'yes':
   - Coolio!
   - Great!
@@ -100,9 +100,10 @@
   - Are you sure I'm *?
   - I think I'd enjoy being *.
   i am *:
-  - Do you like being *?
-  - How did you become *?
-  - Is it normal to be *?
+  - Do you like *?
+  - Why are you *?
+  - Is it normal to *?
+  - How long have you *
   i do not *:
   - Why don't you *
   - Cool me either

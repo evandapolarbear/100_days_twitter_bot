@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'yaml'
-require_relative './wordplay.rb'
+require_relative '.lang_fun/wordplay.rb'
 
 class Bot
   attr_reader :name, :data
@@ -30,13 +30,11 @@ class Bot
     #so to make is simpler for bot to respond.
     prepped_input = preprocess(input)
 
-
     sentence = best_sentence(prepped_input)
 
 
     responses = possible_responses(sentence)
     responses[rand(responses.length)]
-    # "test"
   end
 
   def random_response(key)
@@ -70,7 +68,10 @@ class Bot
   end
 
   def preprocess(input)
+    #add curse removal before live
+
     lowered = input.downcase
+    lowered = WordPlay.remove_curses()
     perform_substitutions(lowered)
   end
 
