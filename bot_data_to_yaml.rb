@@ -58,7 +58,8 @@ bot_data = {
                   "Don't STOP, Believingggg!",
                   "WOOP WOOP!",
                   "You're the Rocky Balboa of code.",
-                  "If I had feelings I would be feel in awe of you."
+                  "If I had feelings I would feel in awe of you!",
+                  "Just keep swimming, just keep swimming"
                   ],
 
     'sorry' => ["No need to appoligize!",

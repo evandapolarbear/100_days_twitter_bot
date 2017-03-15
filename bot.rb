@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'yaml'
-require_relative '.lang_fun/wordplay.rb'
+require_relative 'lang_fun/wordplay.rb'
 
 class Bot
   attr_reader :name, :data
