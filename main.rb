@@ -78,24 +78,24 @@ def listen_for_mentions(term, opts, api)
         f2.write("#{id}")
         f2.close
 
-        reply_with_response(tweet, api)
+        reply_with_response(tweet, api, id)
       end
     end
     sleep(3)
   end
 end
 
-def reply_with_response(tweet, api)
+def reply_with_response(tweet, api, id)
   username = tweet.user.screen_name
 
   filtered_text = remove_mentions(tweet.text)
   response = create_bot_response(filtered_text)
 
-  api.update("@#{username} #{response}")
+  api.update("@#{username} #{response}",  in_reply_to_status_id: id)
 end
 
 def remove_mentions(text)
-  text.split(" ").select{|w| w[0] != "@"}.join
+  text.split(" ").select{|w| w[0] != "@"}.join(" ")
 end
 
 def create_bot_response(text)
