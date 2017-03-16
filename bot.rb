@@ -2,6 +2,7 @@
 
 require 'yaml'
 require_relative 'lang_fun/wordplay.rb'
+require_relative 'lang_fun/sp_check.rb'
 
 class Bot
   attr_reader :name, :data
@@ -26,6 +27,11 @@ class Bot
 
   def response_to(input)
 
+    spelling_checked = input.split(" ").map do |word|
+      checked(word)
+    end.join(" ")
+
+    puts spelling_checked
     #itterates through every presub and subs it
     #so to make is simpler for bot to respond.
     prepped_input = preprocess(input)

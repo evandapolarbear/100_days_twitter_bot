@@ -1,4 +1,6 @@
-def words(text)
+#!/usr/bin/env ruby
+
+def words (text)
   text.downcase.scan(/[a-z]+/)
 end
 
@@ -9,7 +11,7 @@ def train(features)
   return model
 end
 
-NWORDS = train(words(File.new('holmes.txt').read))
+NWORDS = train(words(File.new('./lang_fun/holmes.txt').read))
 LETTERS = ("a".."z").to_a.join
 
 def edits1(word)
@@ -72,3 +74,6 @@ def correct(word)
   (known([word]) || known(edits1(word)) || known_edits2(word) ||
     [word]).max {|a,b| NWORDS[a] <=> NWORDS[b] }
 end
+
+p correct("why")
+p correct("whyy")
