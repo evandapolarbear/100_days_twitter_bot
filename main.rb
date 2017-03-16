@@ -10,7 +10,7 @@ client = Twitter::REST::Client.new do |config|
   config.access_token_secret = ENV["ACCESS_TOKEN_SECRET_100"]
 end
 
-search_options = {
+SEARCH_OPTIONS = {
   result_type: "recent"
 }
 
@@ -23,7 +23,7 @@ search_options = {
 # end
 
 
-def main(term, opts, num, api)
+def favorite(term, opts, num, api)
   liked_names = []
 
   api.search(term, opts).take(num).each do |tweet|
@@ -42,13 +42,12 @@ end
 def better_retweet(term, opts, api, num)
 
   bot_opts = {
-    :name => "Pope Lenny, first of his Name",
     :data => "bot_talk_base"
   }
 
   bot = Bot.new(bot_opts)
 
-  api.search(term, opts,).take(num).each do |tweet|
+  api.search(term, opts).take(num).each do |tweet|
     next if tweet.retweet?
 
     message = bot.random_response(:retweets)
@@ -62,5 +61,63 @@ def better_retweet(term, opts, api, num)
 end
 
 
-main("#100daysofcode", search_options, 50, client)
-better_retweet("#100daysofcode", search_options, client, 7)
+
+def listen_for_mentions(term, opts, api)
+  # ids = []
+  f = File.open("last_mention_id.txt", "r")
+  last_id = f.read.to_i
+  f.close
+
+  while true
+    api.search(term, opts).take(5).each do |tweet|
+      id =  tweet.id
+
+      if id > last_id
+        last_id = id
+        f2 = File.open("last_mention_id.txt", "w")
+        f2.write("#{id}")
+        f2.close
+
+        reply_with_response(tweet, api)
+      end
+    end
+    sleep(3)
+  end
+end
+
+def reply_with_response(tweet, api)
+  username = tweet.user.screen_name
+
+  filtered_text = remove_mentions(tweet.text)
+  response = create_bot_response(filtered_text)
+
+  api.update("@#{username} #{response}")
+end
+
+def remove_mentions(text)
+  text.split(" ").select{|w| w[0] != "@"}.join
+end
+
+def create_bot_response(text)
+  bot = Bot.new(:data => 'bot_talk_base')
+  bot.response_to(text)
+end
+
+
+
+
+
+
+def method_checker(term, opts, api)
+  api.search(term, opts).take(1).each do |tweet|
+    puts tweet.methods - Object.methods
+  end
+end
+
+# method_checker("#100daysofcode", SEARCH_OPTIONS, client)
+
+# favorite("#100daysofcode", SEARCH_OPTIONS, 50, client)
+
+listen_for_mentions("@100daysbot", SEARCH_OPTIONS, client)
+
+# better_retweet("#100daysofcode", SEARCH_OPTIONS, client, 7)

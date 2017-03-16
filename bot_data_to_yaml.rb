@@ -6,6 +6,9 @@ bot_data = {
     ["im"  , "i am"],
     ["i'm"  , "i am"],
 
+    ["whats", "what is"],
+    ["what's", "what is"],
+
     ["dont"   , "do not"],
     ["don't"   , "do not"],
 
@@ -79,14 +82,14 @@ bot_data = {
                 "Whats up?",
                 "Oh Hello!"],
 
-    'whats up' => ["Nothing. Whats up with you?",
+    "what is up" => ["Nothing. Whats up with you?",
                    "Who's asking?",
                    "Nothing but its a beautiful day here in the machine",
                    "Chillaxing",
                    "nada y tu",
                    "Just Finishing up SkyNet... I mean nothing what's up with you"],
 
-    'whats your name' => ["My name is Who? My name is what? I dont actually know."],
+    'what is your name' => ["My name is Who? My name is what? I dont actually know."],
 
     'i said' => ["Cool cool cool cool cooooool",
                  "I heard whay you said I just don't care"],

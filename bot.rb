@@ -26,18 +26,21 @@ class Bot
   end
 
   def response_to(input)
+    #spell checker needs work before being used
+      # spelling_checked = input.split(" ").map do |word|
+      #   correct(word)
+      # end.join(" ")
+      # puts "spelling corrected: " + spelling_checked
 
-    spelling_checked = input.split(" ").map do |word|
-      checked(word)
-    end.join(" ")
 
-    puts spelling_checked
+
+    puts "bot input"
     #itterates through every presub and subs it
     #so to make is simpler for bot to respond.
     prepped_input = preprocess(input)
 
+    puts "input after prep: " + prepped_input
     sentence = best_sentence(prepped_input)
-
 
     responses = possible_responses(sentence)
     responses[rand(responses.length)]
