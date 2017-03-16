@@ -34,7 +34,7 @@ class Bot
 
 
 
-    puts "bot input"
+    puts "bot input: " + input
     #itterates through every presub and subs it
     #so to make is simpler for bot to respond.
     prepped_input = preprocess(input)
@@ -43,6 +43,7 @@ class Bot
     sentence = best_sentence(prepped_input)
 
     responses = possible_responses(sentence)
+    
     responses[rand(responses.length)]
   end
 
