@@ -39,6 +39,8 @@ def favorite(term, opts, num, api)
 end
 
 
+
+
 def better_retweet(term, opts, api, num)
 
   bot_opts = {
@@ -62,7 +64,8 @@ end
 
 
 
-def listen_for_mentions(term, opts, api)
+
+def listen_for_mentions(term, opts, api, time)
   # ids = []
   f = File.open("last_mention_id.txt", "r")
   last_id = f.read.to_i
@@ -81,7 +84,7 @@ def listen_for_mentions(term, opts, api)
         reply_with_response(tweet, api, id)
       end
     end
-    sleep(3)
+    sleep(time)
   end
 end
 
@@ -106,6 +109,58 @@ end
 
 
 
+def main(opts, clt)
+  twt_time = 60 * 60 * 12
+  fav_time = 60 * 60 * 8
+
+  t = Thread.new do
+    async_fav(opts, clt, fav_time)
+  end
+
+  u = Thread.new do
+    async_tweet(opts, clt, twt_time)
+  end
+
+  v = Thread.new do
+    listen_for_mentions("@100daysbot", opts, clt, 5)
+  end
+
+  t.join
+  u.join
+  v.join
+
+end
+
+def async_fav(opts, clt, time)
+  while true
+    favorite("#100daysofcode", opts, 50, clt)
+    sleep time
+  end
+end
+
+def async_tweet(opts, clt, time)
+  while true
+    better_retweet("#100daysofcode", opts, clt, 7)
+    sleep time
+  end
+end
+
+main(SEARCH_OPTIONS, client)
+
+
+
+
+
+
+
+
+# method_checker("#100daysofcode", SEARCH_OPTIONS, client)
+
+# favorite("#100daysofcode", SEARCH_OPTIONS, 50, client)
+
+# listen_for_mentions("@100daysbot", SEARCH_OPTIONS, client)
+
+# better_retweet("#100daysofcode", SEARCH_OPTIONS, client, 7)
 
 
 def method_checker(term, opts, api)
@@ -113,11 +168,3 @@ def method_checker(term, opts, api)
     puts tweet.methods - Object.methods
   end
 end
-
-# method_checker("#100daysofcode", SEARCH_OPTIONS, client)
-
-favorite("#100daysofcode", SEARCH_OPTIONS, 50, client)
-
-# listen_for_mentions("@100daysbot", SEARCH_OPTIONS, client)
-
-better_retweet("#100daysofcode", SEARCH_OPTIONS, client, 7)
