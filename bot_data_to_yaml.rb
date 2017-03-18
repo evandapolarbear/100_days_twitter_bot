@@ -49,7 +49,8 @@ bot_data = {
                  "Sorry, I dont understand.",
                  "Wut?",
                  "Tell me something else",
-                 "I didnt understand.  What are you working in today?"],
+                 "I didnt understand.  What are you working in today?",
+                 "Beep boop Sorry I was doing math and didnt get that."],
 
     :greeting => ["Hola",
                   "Hi I'm [name], hows it going?",
@@ -71,16 +72,21 @@ bot_data = {
                   "Just keep swimming, just keep swimming.",
                   "It's a beautiful day in the neighborhood.",
                   "High Five!",
-                  "Winner Winner Chicken Dinner"],
+                  "Winner Winner Chicken Dinner",
+                  "The true delight is in finding out not in knowing.",
+                  "Dont Fear Mistakes... There are none... except gas station sushi.",
+                  "For those about to code, we salute you!"
+                 ],
 
 
 
 
     'hello' => ["Its nice to meet you. Whats up?",
                 "Hi... erm you. What's happening?",
-                "Hola",
+                "Hola, como estas?",
                 "Whats up?",
-                "Oh Hello!"],
+                "Oh Hello! I didnt see you there. I dont have eyes",
+                ],
 
     "what is up" => ["Nothing. Whats up with you?",
                    "Who's asking?",
@@ -92,7 +98,9 @@ bot_data = {
     'what is your name' => ["My name is Who? My name is what? I dont actually know."],
 
     'i said' => ["Cool cool cool cool cooooool",
-                 "I heard whay you said I just don't care"],
+                 "I heard what you said I just don't care",
+                 "Why did you say that?",
+                 ""],
 
     'test' => ["I'm awake I swear!",
                "I wasn't told there would be a test",

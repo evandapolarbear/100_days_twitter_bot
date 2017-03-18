@@ -116,8 +116,8 @@ end
 
 # method_checker("#100daysofcode", SEARCH_OPTIONS, client)
 
-# favorite("#100daysofcode", SEARCH_OPTIONS, 50, client)
+favorite("#100daysofcode", SEARCH_OPTIONS, 50, client)
 
-listen_for_mentions("@100daysbot", SEARCH_OPTIONS, client)
+# listen_for_mentions("@100daysbot", SEARCH_OPTIONS, client)
 
-# better_retweet("#100daysofcode", SEARCH_OPTIONS, client, 7)
+better_retweet("#100daysofcode", SEARCH_OPTIONS, client, 7)
