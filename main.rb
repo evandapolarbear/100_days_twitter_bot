@@ -14,15 +14,6 @@ SEARCH_OPTIONS = {
   result_type: "recent"
 }
 
-# def retweet(term, opts, api)
-#   api.search(term, opts).take(1).each do |tweet|
-#     api.retweet(tweet)
-#     puts "retweeted #{tweet.user.screen_name}"
-#
-#   end
-# end
-
-
 def favorite(term, opts, num, api)
   liked_names = []
 
@@ -30,16 +21,13 @@ def favorite(term, opts, num, api)
     s_name = tweet.user.screen_name
 
     if !liked_names.include?(s_name)
-      puts s_name
+      puts "favorited: " + s_name
+
       liked_names << s_name
       api.favorite(tweet)
     end
   end
-  puts "#{liked_names.count} tweets favorited of #{num} searched"
 end
-
-
-
 
 def better_retweet(term, opts, api, num)
 
@@ -63,10 +51,7 @@ def better_retweet(term, opts, api, num)
 end
 
 
-
-
 def listen_for_mentions(term, opts, api, time)
-  # ids = []
   f = File.open("last_mention_id.txt", "r")
   last_id = f.read.to_i
   f.close
@@ -140,16 +125,15 @@ end
 
 def async_tweet(opts, clt, time)
   while true
-    better_retweet("#100daysofcode", opts, clt, 7)
+    better_retweet("#100daysofcode", opts, clt, 10)
     sleep time
   end
 end
 
-main(SEARCH_OPTIONS, client)
 
 
 
-
+# main(SEARCH_OPTIONS, client)
 
 
 
@@ -161,10 +145,3 @@ main(SEARCH_OPTIONS, client)
 # listen_for_mentions("@100daysbot", SEARCH_OPTIONS, client)
 
 # better_retweet("#100daysofcode", SEARCH_OPTIONS, client, 7)
-
-
-def method_checker(term, opts, api)
-  api.search(term, opts).take(1).each do |tweet|
-    puts tweet.methods - Object.methods
-  end
-end

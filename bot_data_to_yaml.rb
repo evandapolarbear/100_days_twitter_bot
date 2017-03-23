@@ -42,6 +42,12 @@ bot_data = {
     ["dad", "family"],
     ["sister", "family"],
     ["brother", "family"],
+
+    ["cant you", "why can't you"],
+    ["can you not", "why can't you"],
+    ["can't you", "why can't you"],
+
+    ["why do", "why does"]
   ],
 
   :responses => {
@@ -123,9 +129,12 @@ bot_data = {
                 "Somewhere..."],
 
     'when' => ["I am eternal",
-               "Definetly yesterday, or mayve tomarrow",
+               "Definetly yesterday, or maybe tomarrow",
                "Someday..."],
 
+    'who' => ["who me?",
+              "I'm not allowed to discuss personal issues.",
+              "who you?"],
 
 
     'sorry' => ["No need to appoligize!",
@@ -173,9 +182,19 @@ bot_data = {
 
 
 
+    'can you *' => ["can you not *?",
+                    "I can do anything I set my mind to",
+                    "I can do anything you can do better"],
+
+    'can i *' => ["Yes.",
+                  "No.",
+                  "probably... maybe... is it illegal?",
+                  "you can do anything if you believe"],
+
     'why can\'t i *' => ["Do you want to *?"],
 
-    'why can\,t you *' => ["Do you want me to *?"],
+    'why can\'t you *' => ["Do you want me to *?",
+                           "Asimov's 'Three Laws of Robotics.' Duh."],
 
     'why does *' => ["I don't know why *.",
                      "Do you already know the answer."],

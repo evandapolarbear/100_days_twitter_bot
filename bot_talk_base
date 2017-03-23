@@ -130,8 +130,12 @@
   - Somewhere...
   when:
   - I am eternal
-  - Definetly yesterday, or mayve tomarrow
+  - Definetly yesterday, or maybe tomarrow
   - Someday...
+  who:
+  - who me?
+  - I'm not allowed to discuss personal issues.
+  - who you?
   sorry:
   - No need to appoligize!
   - It's Okay
@@ -171,6 +175,15 @@
   i do not *:
   - Why don't you *
   - Cool me either
+  can you *:
+  - can you not *?
+  - I can do anything I set my mind to
+  - I can do anything you can do better
+  can i *:
+  - Yes.
+  - No.
+  - probably... maybe... is it illegal?
+  - you can do anything if you believe
   why can't i *:
   - Do you want to *?
   why can\,t you *:
