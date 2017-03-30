@@ -118,15 +118,17 @@ end
 
 def async_fav(opts, clt, time)
   while true
+    add_time=((rand*5).to_i.floor)*60*60
     favorite("#100daysofcode", opts, 50, clt)
-    sleep time
+    sleep time + add_time
   end
 end
 
 def async_tweet(opts, clt, time)
   while true
+    add_time=((rand*3).to_i.floor)*60*60
     better_retweet("#100daysofcode", opts, clt, 10)
-    sleep time
+    sleep time + add_time
   end
 end
 
